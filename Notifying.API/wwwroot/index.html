@@ -1,0 +1,57 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Notification</title>
+</head>
+<body>
+    <img src="https://static.wixstatic.com/media/495ea5_7e0ce1ea882d4b64a2ad11df940a15ca~mv2.gif" alt="Alternate Text" style="height:100vh;width:100vw;justify-content:center;align-content:center" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/microsoft-signalr/6.0.1/signalr.js"></script>
+    <script>
+        let token;
+        let hubConnection;
+        async function auth() {
+            try {
+                const response = await fetch('http://localhost:6101/api-auth/Auth/Login', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json;charset=utf-8' },
+                    body: JSON.stringify({ userName: "superadmin", password: "123456" }),
+                });
+
+                if (!response.ok) {
+                    throw new Error('Network response was not ok');
+                }
+
+                const result = await response.json();
+
+                return result;
+            } catch (error) {
+                console.error('Error during POST request:', error);
+            }
+        }
+
+        auth()
+            .then(result => {
+                console.log('Success:', result);
+                token = result.accessToken;
+                hubConnection = new signalR.HubConnectionBuilder()
+                    .withUrl("/notification", { accessTokenFactory: () => token })
+                    .build();
+                hubConnection.on("Receive", function (notification) {
+                    var json = JSON.stringify(notification);
+                    alert(json);
+                });
+                hubConnection.on("ReceiveAll", function (notifications) {
+                    notifications.forEach(function (notification) {
+                        var json = JSON.stringify(notification);
+                        alert(json);
+                    });
+                });
+                hubConnection.start();
+            })
+            .catch(error => {
+                console.error('Error in POST request:', error);
+            });
+    </script>
+</body>
+</html>

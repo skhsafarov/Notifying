@@ -1,0 +1,32 @@
+build-test-notifying-api:
+  image: docker:latest
+  stage: build
+  tags:
+    - scoring_test
+  services:
+    - docker:dind
+  script:
+    - export DOCKER_BUILDKIT=1
+    - docker build . -t 172.17.12.10/genesis-group/scoring:Notifying.API -f ./Notifying/Notifying.API/Dockerfile
+  only:
+    refs:
+      - test
+    changes:
+      - Notifying/Notifying.Domain/**/*
+      - Notifying/Notifying.Infrastructure/**/*
+      - Notifying/Notifying.API/**/*
+
+deploy-test-notifying-api:
+  stage: deploy
+  tags:
+    - scoring_test
+  script:
+    - docker container rm -f notifying-test-notifying-api || true
+    - docker run -d -p 6105:6105 --restart=always -v /etc/localtime:/etc/localtime:ro --name notifying-test-notifying-api 172.17.12.10/genesis-group/scoring:Notifying.API
+  only:
+    refs:
+      - test
+    changes:
+      - Notifying/**/*
+      - Notifying/Notifying.Infrastructure/**/*
+      - Notifying/Notifying.API/**/*

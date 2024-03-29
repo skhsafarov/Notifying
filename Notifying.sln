@@ -1,0 +1,44 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.8.34330.188
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Notifying.API", "Notifying.API\Notifying.API.csproj", "{07B97D83-4643-46F3-863E-FE383CCA0128}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Notifying.Domain", "Notifying.Domain\Notifying.Domain.csproj", "{9617335E-7EDA-4CD8-978A-403185B798ED}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Notifying.Infrastructure", "Notifying.Infrastructure\Notifying.Infrastructure.csproj", "{8E1AFA0C-A5C3-4638-BD28-359C4688B6BD}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+		Sardor|Any CPU = Sardor|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{07B97D83-4643-46F3-863E-FE383CCA0128}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{07B97D83-4643-46F3-863E-FE383CCA0128}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{07B97D83-4643-46F3-863E-FE383CCA0128}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{07B97D83-4643-46F3-863E-FE383CCA0128}.Release|Any CPU.Build.0 = Release|Any CPU
+		{07B97D83-4643-46F3-863E-FE383CCA0128}.Sardor|Any CPU.ActiveCfg = Sardor|Any CPU
+		{07B97D83-4643-46F3-863E-FE383CCA0128}.Sardor|Any CPU.Build.0 = Sardor|Any CPU
+		{9617335E-7EDA-4CD8-978A-403185B798ED}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9617335E-7EDA-4CD8-978A-403185B798ED}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9617335E-7EDA-4CD8-978A-403185B798ED}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9617335E-7EDA-4CD8-978A-403185B798ED}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9617335E-7EDA-4CD8-978A-403185B798ED}.Sardor|Any CPU.ActiveCfg = Sardor|Any CPU
+		{9617335E-7EDA-4CD8-978A-403185B798ED}.Sardor|Any CPU.Build.0 = Sardor|Any CPU
+		{8E1AFA0C-A5C3-4638-BD28-359C4688B6BD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8E1AFA0C-A5C3-4638-BD28-359C4688B6BD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8E1AFA0C-A5C3-4638-BD28-359C4688B6BD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8E1AFA0C-A5C3-4638-BD28-359C4688B6BD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8E1AFA0C-A5C3-4638-BD28-359C4688B6BD}.Sardor|Any CPU.ActiveCfg = Sardor|Any CPU
+		{8E1AFA0C-A5C3-4638-BD28-359C4688B6BD}.Sardor|Any CPU.Build.0 = Sardor|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {6BDA68A3-58B7-485E-A974-2420BDC72CD1}
+	EndGlobalSection
+EndGlobal
